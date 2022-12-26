@@ -8,31 +8,31 @@ export class CarsService {
 
     //mockeamos una base de datos
     private cars: Cars[] =  [
-        {
-            id: uuid(),
-            brand: 'Toyota',
-            model: 'Celica'
-        },
-        {
-            id: uuid(),
-            brand: 'Hyundai',
-            model: 'Genesis'
-        },
-        {
-            id: uuid(),
-            brand: 'Honda',
-            model: 'Accord'
-        },
-        {
-            id: uuid(),
-            brand: 'Renault',
-            model: 'Mondeo'
-        },
-        {
-            id: uuid(),
-            brand: 'Volkswagen',
-            model: 'Passat'
-        }
+        // {
+        //     id: uuid(),
+        //     brand: 'Toyota',
+        //     model: 'Celica'
+        // },
+        // {
+        //     id: uuid(),
+        //     brand: 'Hyundai',
+        //     model: 'Genesis'
+        // },
+        // {
+        //     id: uuid(),
+        //     brand: 'Honda',
+        //     model: 'Accord'
+        // },
+        // {
+        //     id: uuid(),
+        //     brand: 'Renault',
+        //     model: 'Mondeo'
+        // },
+        // {
+        //     id: uuid(),
+        //     brand: 'Volkswagen',
+        //     model: 'Passat'
+        // }
     ];
 
     findAll() {
@@ -75,6 +75,10 @@ export class CarsService {
     deleteCar( id: string ) {
         this.findOneByID(id);
         this.cars = this.cars.filter( car => car.id !== id)
+    }
+
+    fillCarsWithSeedData( cars: Cars[] ) {
+        this.cars = cars;
     }
 
 }
